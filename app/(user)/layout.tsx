@@ -19,7 +19,7 @@ export default function UserLayout({
   // }, [user, loading, router]);
 
   useEffect(() => {
-    console.log(user);
+    // console.log(user);
     if (loading) return;
     if (!user) router.replace("/login");
     if (user && user.role !== "user") router.replace("/dashboard");
