@@ -135,7 +135,7 @@ export default function RegisterPage() {
                 style={{ cursor: "pointer" }}
               >
                 <option value="user">User</option>
-                <option value="admin">Admin</option>
+                {/* <option value="admin">Admin</option> */}
               </select>
             </div>
             <button
