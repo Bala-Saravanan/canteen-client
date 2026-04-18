@@ -13,9 +13,15 @@ export default function UserLayout({
   const { user, loading } = useAuth();
   const router = useRouter();
 
+  // useEffect(() => {
+  //   if (!loading && !user) router.replace("/login");
+  //   if (!loading && user?.role !== "user") router.replace("/dashboard");
+  // }, [user, loading, router]);
+
   useEffect(() => {
-    if (!loading && !user) router.replace("/login");
-    // if (!loading && user?.role !== "user") router.replace("/dashboard");
+    if (loading) return;
+    if (!user) router.replace("/login");
+    if (user && user.role !== "user") router.replace("/dashboard");
   }, [user, loading, router]);
 
   if (loading) return <Loader fullscreen />;

@@ -13,10 +13,23 @@ export default function AdminLayout({
   const { user, loading } = useAuth();
   const router = useRouter();
 
+  // useEffect(() => {
+  //   // console.log(user);
+  //   if (!loading && !user) router.replace("/login");
+  //   if (!loading && user?.role !== "admin") router.replace("/menu");
+  // }, [user, loading, router]);
+
   useEffect(() => {
-    // console.log(user);
-    if (!loading && !user) router.replace("/login");
-    // if (!loading && user?.role !== "admin") router.replace("/menu");
+    if (loading) return;
+
+    if (!user) {
+      router.replace("/login");
+      return;
+    }
+
+    if (user.role !== "admin") {
+      router.replace("/menu");
+    }
   }, [user, loading, router]);
 
   if (loading) return <Loader fullscreen />;
