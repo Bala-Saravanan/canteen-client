@@ -20,6 +20,7 @@ export default function AdminLayout({
   // }, [user, loading, router]);
 
   useEffect(() => {
+    console.log(user);
     if (loading) return;
 
     if (!user) {
