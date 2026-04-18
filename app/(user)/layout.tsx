@@ -15,7 +15,7 @@ export default function UserLayout({
 
   useEffect(() => {
     if (!loading && !user) router.replace("/login");
-    if (!loading && user?.role !== "user") router.replace("/dashboard");
+    // if (!loading && user?.role !== "user") router.replace("/dashboard");
   }, [user, loading, router]);
 
   if (loading) return <Loader fullscreen />;

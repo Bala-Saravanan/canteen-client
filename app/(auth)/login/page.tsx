@@ -28,7 +28,7 @@ export default function LoginPage() {
         if (res.data.role === "admin") {
           router.push("/dashboard");
         } else {
-          router.replace("/menu");
+          router.push("/menu");
         }
       }
     } catch (err: unknown) {

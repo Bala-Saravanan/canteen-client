@@ -14,8 +14,9 @@ export default function AdminLayout({
   const router = useRouter();
 
   useEffect(() => {
+    // console.log(user);
     if (!loading && !user) router.replace("/login");
-    if (!loading && user?.role !== "admin") router.replace("/menu");
+    // if (!loading && user?.role !== "admin") router.replace("/menu");
   }, [user, loading, router]);
 
   if (loading) return <Loader fullscreen />;
