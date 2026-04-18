@@ -11,15 +11,15 @@ const api = axios.create({
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.log(error);
-    if (error.response?.status === 401) {
-      if (
-        typeof window !== "undefined" &&
-        window.location.pathname !== "/login"
-      ) {
-        window.location.href = "/login";
-      }
-    }
+    // console.log(error);
+    // if (error.response?.status === 401) {
+    //   if (
+    //     typeof window !== "undefined" &&
+    //     window.location.pathname !== "/login"
+    //   ) {
+    //     window.location.href = "/login";
+    //   }
+    // }
     return Promise.reject(error);
   },
 );
